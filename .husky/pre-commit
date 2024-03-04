@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Check if code is formatted using Prettier
+if yarn prettier:check; then
+  # If formatted, run the tests
+  yarn test
+else
+  # If not formatted, automatically format the code using Prettier
+  yarn prettier:write
+  # Then run the tests
+  yarn test
+fi
