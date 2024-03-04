@@ -1,7 +1,7 @@
 import { format, transports } from "winston";
 
 module.exports = {
-  port: process.env.APP_PORT || 8080,
+  port: process.env.NODE_PORT || 3000,
   cors: {
     origin: process.env.CORS_ORIGIN || "*",
   },
