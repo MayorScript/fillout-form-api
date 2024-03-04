@@ -10,7 +10,7 @@ export const filteredFormSubmissions = async (req: Request, res: Response) => {
   } catch (error: any) {
     const errorMessage = `An error occurred: ${error.message}`;
     logger.error(errorMessage);
-    const statusCode = error.isAxiosError ? 502 : 400; 
+    const statusCode = error.isAxiosError ? 502 : 400;
     res
       .status(statusCode)
       .json({ message: "An error occurred", error: error.message });

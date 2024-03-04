@@ -10,7 +10,7 @@ const validate =
   (schema: any) => async (req: Request, res: Response, next: NextFunction) => {
     try {
       await schema.validate({
-        query: req.query
+        query: req.query,
       });
       return next();
     } catch (err: any) {
